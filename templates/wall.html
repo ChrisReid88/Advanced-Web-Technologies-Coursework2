@@ -26,8 +26,12 @@
                       </div>
                         <div class="col-lg-9" >
                             <form action="/wall" method="POST">
+                                <div class="col-lg-10">
                                 <textarea class="form-control" id="user-post" rows="3" name="comment" placeholder="Say something.."></textarea>
+                                </div>
+                                <div class="col-lg-2">
                                 <button class="btn btn-default pull-right" id="post-button">Post</button>
+                                </div>
                             </form>
                         </div>
                   </div>
@@ -35,6 +39,7 @@
           </div>
 
           <div class="col-lg-8">
+          {% if comments %}
               {% for row in comments | reverse %}
               <div class="col-lg-10 well">
                   <div class="col-lg-3 well" id="post-user-info">
@@ -42,15 +47,15 @@
                       <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-thumbnail">
                   </div>
                   <div class="col-lg-9 well text-left">
-                      {{ '"'+row[2]+'"' }}
+                      {{ '"'+row[5]+'"' }}
                   </div>
-              <div class="col-lg-9 text-right" id="time-of-post">
-                          {{ "Posted at "+row[3] }}
-                      </div>
               </div>
               {% endfor %}
+          {% endif %}
           </div>
+
       </div>
+
     </div>
 
 </body>
