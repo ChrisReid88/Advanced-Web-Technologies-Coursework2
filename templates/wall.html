@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <title>{{ session['username'] }}'s Wall</title>
+
+</head>
+<body>
+    {% include 'logged-menu.html' %}
+
+    <div class="container text-center">
+      <div class="row">
+          <div class="col-lg-3 well">
+              <div class="well">
+                  <h4>{{ session['username'] }}</h4>
+                  <img src="static/imgs/prof.jpg" alt="profile picture" id="prof">
+              </div>
+          </div>
+          <div class="col-lg-8">
+              <div class="col-lg-10 well">
+                  <div class="col-lg-3"></div>
+                    <div class="col-lg-9" >
+                        <form action="/verse" method="POST">
+                            <textarea class="form-control" id="user-post" rows="3" name="comment"></textarea>
+                            <button class="btn btn-default pull-right" id="post-button">Post</button>
+                        </form>
+                    </div>
+
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+#login-panel{
+    width:30%;
+    margin:0 auto;
+}
+#input-form{
+    margin: 0 auto;
+    padding-bottom:10px;
+}
+
+.panel > .panel-heading{
+    background-image:none;
+    background-color: #337ab7;
+}
+#login-button{
+    text-align: center;
+    padding-top:10px;
+}
+
+#prof{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+#user-post{
+    padding-top:10px;
+}
