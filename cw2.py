@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect, render_template, url_for, session
 import sqlite3
-import bcrypt
 import os
+import time
 
 
 app = Flask(__name__)
@@ -35,31 +35,51 @@ def validate(username, password):
                 for row in rows:
                     db_username = row[0]
                     db_password = row[1]
-                    if db_username == username and db_password==password:
+                    if db_username == username and db_password == password:
                         valid = True
     return valid
 
 
 @app.route('/wall', methods=['POST', 'GET'])
 def wall():
+    comments = get_comments()
+    print comments
     if request.method == 'POST':
-        # session['comment'] = request.form['comment']
-        return redirect(url_for('verse'))
-    return render_template('wall.html')
+        make_post()
+        return redirect(url_for('wall'))
+    return render_template('wall.html', comments=comments)
 
 
-@app.route('/verse', methods=['POST'])
 def make_post():
-    session['comment'] = request.form['comment']
-    if session['comment']:
+    comment = request.form['comment']
+    if comment:
+        con = sqlite3.connect(DATABASE)
+        with con:
+            cur = con.cursor()
+            cur.execute("INSERT INTO comments(username, comment,date) VALUES (?,?,?)",(session['username'], comment, time.strftime('%Y-%m-%d %H:%M:%S')))
+            con.commit()
 
-    return 'it worked {}'.format(session['comment'])
+
+def get_comments():
+    con = sqlite3.connect(DATABASE)
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM comments WHERE username=(?)", (session['username'],))
+        rows = cur.fetchall()
+    return rows
 
 
-# @app.route('/register')
-# def register():
-#     render_template('register.html')
 
+@app.route('/testuser')
+def us():
+    con = sqlite3.connect(DATABASE)
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM users")
+        rows = cur.fetchall()
+        for row in rows:
+            print row
+    return 'it worked'
 
 if __name__ == '__main__':
     app.run(debug=True)

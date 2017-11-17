@@ -9,7 +9,16 @@
 
 .panel > .panel-heading{
     background-image:none;
-    background-color: #337ab7;
+    background-color: #333333;
+    color: white;
+}
+
+.post-box{
+    background-color: #337ab7 !important; ;
+}
+
+body{
+    background-color: #333333 !important;
 }
 #login-button{
     text-align: center;
@@ -21,6 +30,20 @@
     max-height: 50px;
 }
 
+#big-prof{
+    max-width: 150px;
+    max-height: 150px;
+}
+
 #user-post{
     padding-top:10px;
+}
+
+.comments{
+    height: 50px;
+    line-height: 50px;
+}
+
+#post-user-info{
+    border-right:solid thin gray;
 }
