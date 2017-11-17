@@ -75,10 +75,8 @@ def us():
     con = sqlite3.connect(DATABASE)
     with con:
         cur = con.cursor()
-        cur.execute("SELECT * FROM users")
-        rows = cur.fetchall()
-        for row in rows:
-            print row
+        cur.execute("DELETE FROM comments")
+        con.commit()
     return 'it worked'
 
 if __name__ == '__main__':

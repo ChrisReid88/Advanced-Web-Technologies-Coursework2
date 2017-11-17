@@ -25,7 +25,7 @@
                           <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-circle">
                       </div>
                         <div class="col-lg-9" >
-                            <form action="/verse" method="POST">
+                            <form action="/wall" method="POST">
                                 <textarea class="form-control" id="user-post" rows="3" name="comment" placeholder="Say something.."></textarea>
                                 <button class="btn btn-default pull-right" id="post-button">Post</button>
                             </form>
@@ -44,7 +44,7 @@
                   <div class="col-lg-9 well text-left">
                       {{ '"'+row[2]+'"' }}
                   </div>
-              <div class="col-lg-12 text-right" id="time-of-post">
+              <div class="col-lg-9 text-right" id="time-of-post">
                           {{ "Posted at "+row[3] }}
                       </div>
               </div>
