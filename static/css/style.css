@@ -18,7 +18,7 @@
 }
 
 body{
-    background-color: #333333 !important;
+    background-color: lightgray !important;
 }
 #login-button{
     text-align: center;
@@ -50,4 +50,15 @@ body{
 
 #panel-heading{
     border-bottom: solid grey thin !important;
+}
+
+#follow-button{
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+.cn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

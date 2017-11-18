@@ -69,14 +69,14 @@ def register():
     if request.method == 'POST':
         new_username = request.form['username']
         new_password = bcrypt.hashpw(request.form['password'].encode('utf8'), salt)
-        print new_password
-        if new_username in rows[0]:
-            error = 'Sorry, that username has been taken. Please try another.'
-        else:
-            with db:
-                cur.execute("INSERT INTO users(username, password) VALUES (?,?)", (new_username, new_password))
-                db.commit
-            return redirect(url_for('login'))
+        for row in rows:
+            if new_username == row[1]:
+                error = 'Sorry, that username has been taken. Please try another.'
+            else:
+                with db:
+                    cur.execute("INSERT INTO users(username, password) VALUES (?,?)", (new_username, new_password))
+                    db.commit
+                return redirect(url_for('login'))
     return render_template('register.html', error=error)
 
 
@@ -101,16 +101,26 @@ def check_auth(username, password):
 @app.route('/wall', methods=['POST', 'GET'])
 @requires_login
 def wall():
+
     comments = None
-    users=get_users()
-    print users
+    follower_comments = None
+    users = get_users()
     id = session['user_id']
-    if get_comments(id):
-        comments = get_comments(id)
+    get_following_comments(id)
+    if get_following_comments(id):
+        follower_comments = get_following_comments(id)
+    if get_own_comments(id):
+        comments = get_own_comments(id)
     if request.method == 'POST':
-        make_post(id)
-        return redirect(url_for('wall'))
-    return render_template('wall.html', comments=comments, users=users)
+        if request.form['submit'] == 'make-comment':
+            make_post(id)
+            return redirect(url_for('wall'))
+        for user in users:
+            if request.form['submit'] in user:
+                follow(id, request.form['submit'])
+                return redirect(url_for('wall'))
+
+    return render_template('wall.html', comments=comments, follower_comments=follower_comments, users=users)
 
 
 @app.route('/logout')
@@ -122,14 +132,26 @@ def logout():
 def make_post(user_id):
     comment = request.form['comment']
     if comment:
-        db = sqlite3.connect(DATABASE)
+        db = get_db()
         with db:
             cur = db.cursor()
             cur.execute("INSERT INTO comments(user_id, comment) VALUES (?,?)", (user_id, comment))
             db.commit()
 
 
-def get_comments(uid):
+def follow(uid, fun):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT user_id FROM USERS WHERE username=(?)", (fun,))
+    row = cur.fetchall()
+    fid = row[0][0]
+
+    with db:
+        cur.execute("INSERT INTO followers(id_user, id_following) VALUES (?,?)", (uid, fid))
+        db.commit()
+
+
+def get_own_comments(uid):
     db = get_db()
     cur = db.cursor()
     cur.execute(
@@ -137,6 +159,24 @@ def get_comments(uid):
         (uid,))
     rows = cur.fetchall()
     return rows
+
+
+def get_following_comments(uid):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT id_following FROM followers WHERE id_user=(?)", (uid,))
+    rows = cur.fetchall()
+    list = [r[0] for r in rows]
+    placeholder = '?'
+    placeholders = ', '.join(placeholder for id in list)
+    print list
+    print placeholders
+    query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) WHERE comments.user_id IN (%s)" % placeholders
+    cur.execute(query, list)
+    rw = cur.fetchall()
+    return rw
+    # return comment_list
+
 
 def get_users():
     db = get_db()

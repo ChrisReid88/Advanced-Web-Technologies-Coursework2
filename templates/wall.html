@@ -30,25 +30,39 @@
                                 <textarea class="form-control" id="user-post" rows="3" name="comment" placeholder="Say something.."></textarea>
                                 </div>
                                 <div class="col-lg-2">
-                                <button class="btn btn-default pull-right" id="post-button">Post</button>
+                                <button class="btn btn-default pull-right" name="submit" id="post-button" value="make-comment">Post</button>
                                 </div>
                             </form>
                         </div>
                   </div>
-                  {% if comments %}
-                      {% for row in comments | reverse %}
-                          <div class="col-lg-12 well">
-                              <div class="col-lg-3 well" id="post-user-info">
-                                  <h6>{{ row[1] }}</h6>
-                                  <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-thumbnail">
+                   {% if follower_comments %}
+                      {% for row in follower_comments | reverse %}
+                              <div class="col-lg-12 well cn">
+                                  <div class="col-lg-3" id="post-user-info">
+                                      <h6>{{ row[1] }}</h6>
+                                      <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-thumbnail">
+                                  </div>
+                                  <div class="col-lg-9 text-left">
+                                      {{ '"'+row[5]+'"' }}
+                                  </div>
                               </div>
-                              <div class="col-lg-9 well text-left">
-                                  {{ '"'+row[5]+'"' }}
-                              </div>
-                          </div>
                       {% endfor %}
                   {% endif %}
               </div>
+{#                  {% if comments %}#}
+{#                      {% for row in comments | reverse %}#}
+{#                          <div class="col-lg-12 well cn">#}
+{#                              <div class="col-lg-3" id="post-user-info">#}
+{#                                  <h6>{{ row[1] }}</h6>#}
+{#                                  <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-thumbnail">#}
+{#                              </div>#}
+{#                              <div class="col-lg-9 text-left">#}
+{#                                  {{ '"'+row[5]+'"' }}#}
+{#                              </div>#}
+{#                          </div>#}
+{#                      {% endfor %}#}
+{#                  {% endif %}#}
+{#              </div>#}
 
           </div>
           <div class="col-lg-3 panel panel-heading" id="panel-heading">
@@ -57,11 +71,24 @@
                   <h5>People you may know</h5>
               </div>
 
-              <div class="col-lg-12 panel">
+              <div class="col-lg-12 panel ">
                  {% for people in users %}
-                <div class="well">
-                  <p>{{ people[0] }}</p>
-                </div>
+                     <form action="/wall" method="POST">
+                        <div class="well col-lg-12">
+                            <div class="col-lg-12 text-center" >
+                              <p>{{ people[0] }}</p>
+                            </div>
+                            <div class="col-lg-12">
+                                <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-circle">
+                            </div>
+                            <div class="col-lg-12" id="follow-button">
+
+                                <button class="btn btn-default" name="submit" value="{{ people[0] }}" >Follow</button>
+
+                             </div>
+                        </div>
+                       </form>
+
                   {% endfor %}
               </div>
           </div>

@@ -18,8 +18,8 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `followers` (
-  `id_user` INT NOT NULL REFERENCES `users`(user_id),
-  `id_following` INT NOT NULL REFERENCES `users`(`user_id`),
+  `id_user` INTEGER NOT NULL REFERENCES `users`(user_id),
+  `id_following` INTEGER NOT NULL REFERENCES `users`(`user_id`),
   PRIMARY KEY (id_user, id_following)
 );
 
