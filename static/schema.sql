@@ -23,4 +23,4 @@ CREATE TABLE `followers` (
   PRIMARY KEY (id_user, id_following)
 );
 
-INSERT INTO `users` (`username`, `password`) VALUES ('chrisrd', 'password');
+INSERT INTO `users` (`username`, `password`) VALUES ('chrisrd', '$2b$12$b8uFb3vOmHmjYtvHh.33u.cyWfv82s5zVUFUnoPiiJi/YHZX50ppW');

@@ -1,13 +1,12 @@
 from flask import Flask, request, redirect, render_template, url_for, session, g
-import sqlite3
-import os
-import time
-
+import sqlite3, os, time, bcrypt
+from functools import wraps
 
 app = Flask(__name__)
 DB_ROOT = os.path.dirname(os.path.realpath(__file__))
 DATABASE = os.path.join(DB_ROOT, 'static', 'db.db')
 app.secret_key = os.urandom(24)
+salt =  bcrypt.gensalt()
 
 def get_db():
     db = getattr(g, 'db', None)
@@ -31,6 +30,16 @@ def init_db():
         db.commit
 
 
+def requires_login(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        status = session.get('logged_in', False)
+        if not status:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -38,13 +47,14 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        valid = validate(username, password)
+        valid = check_auth(username, password)
 
         if not valid:
             error = 'Sorry, the username or password entered is incorrect. Try again.'
         else:
             session['username'] = username
             session['password'] = password
+            session['logged_in'] = True
             return redirect(url_for('wall'))
     return render_template('login.html', error=error)
 
@@ -58,8 +68,8 @@ def register():
     rows = cur.fetchall()
     if request.method == 'POST':
         new_username = request.form['username']
-        new_password = request.form['password']
-
+        new_password = bcrypt.hashpw(request.form['password'].encode('utf8'), salt)
+        print new_password
         if new_username in rows[0]:
             error = 'Sorry, that username has been taken. Please try another.'
         else:
@@ -70,34 +80,43 @@ def register():
     return render_template('register.html', error=error)
 
 
-def validate(username, password):
+def check_auth(username, password):
     db = get_db()
     valid = False
     with db:
-                cur = db.cursor()
-                cur.execute("SELECT * FROM users WHERE username=(?)", (username,))
-                row = cur.fetchall()
-                if row:
-                    session['user_id'] = row[0][0]
-                    print session['user_id']
-                    db_username = row[0][1]
-                    db_password = row[0][2]
-                    if db_username == username and db_password == password:
-                        valid = True
+        cur = db.cursor()
+        cur.execute("SELECT * FROM users WHERE username=(?)", (username,))
+        row = cur.fetchall()
+        if row:
+            session['user_id'] = row[0][0]
+            db_username = row[0][1]
+            db_password = row[0][2]
+            if db_username == username and db_password == bcrypt.hashpw(password.encode('utf8'), db_password.encode('utf8')):
+
+                valid = True
+
     return valid
 
 
 @app.route('/wall', methods=['POST', 'GET'])
+@requires_login
 def wall():
     comments = None
+    users=get_users()
+    print users
     id = session['user_id']
-    print id
     if get_comments(id):
         comments = get_comments(id)
     if request.method == 'POST':
         make_post(id)
         return redirect(url_for('wall'))
-    return render_template('wall.html', comments=comments)
+    return render_template('wall.html', comments=comments, users=users)
+
+
+@app.route('/logout')
+def logout():
+    session['logged_in'] = False
+    return redirect(url_for('login'))
 
 
 def make_post(user_id):
@@ -113,11 +132,18 @@ def make_post(user_id):
 def get_comments(uid):
     db = get_db()
     cur = db.cursor()
-    cur.execute("SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) WHERE comments.user_id=(?)", (uid, ))
+    cur.execute(
+        "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) WHERE comments.user_id=(?)",
+        (uid,))
     rows = cur.fetchall()
-    print rows
     return rows
 
+def get_users():
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT username FROM users")
+    rows = cur.fetchall()
+    return rows
 
 if __name__ == '__main__':
     app.run(debug=True)
