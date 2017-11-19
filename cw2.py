@@ -104,14 +104,15 @@ def wall():
     comments = None
     follower_comments = None
     avatar = None
-    users = get_users()
+    users = get_users(id)
     if get_profile_picture(id):
         avatar = get_profile_picture(id)
-        print avatar
     if get_following_comments(id):
         follower_comments = get_following_comments(id)
+        print follower_comments
     if get_own_comments(id):
         comments = get_own_comments(id)
+
     if request.method == 'POST':
         if request.form['submit'] == 'make-comment':
             make_post(id)
@@ -130,7 +131,7 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/profile')
+@app.route('/profile', methods=['GET','POST'])
 def profile():
 
     id = session['user_id']
@@ -141,7 +142,11 @@ def profile():
         avatar = get_profile_picture(id)
     if get_own_comments(session['user_id']):
         comments = get_own_comments(session['user_id'])
-        print comments
+    if request.method == 'POST':
+        if request.form['submit'] == 'make-comment':
+            make_post(id)
+            return redirect(url_for('profile'))
+
     return render_template('account.html', comments=comments, avatar=avatar)
 
 
@@ -185,7 +190,7 @@ def get_following_comments(uid):
     list = [r[0] for r in rows]
     placeholder = '?'
     placeholders = ', '.join(placeholder for id in list)
-    query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) WHERE comments.user_id IN (%s)" % placeholders
+    query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) INNER JOIN followers ON (followers.id_following = users.user_id) WHERE comments.user_id IN (%s)" % placeholders
     cur.execute(query, list)
     rw = cur.fetchall()
     return rw
@@ -201,10 +206,10 @@ def insert_new_user(username, password):
         db.commit
 
 
-def get_users():
+def get_users(id):
     db = get_db()
     cur = db.cursor()
-    cur.execute("SELECT username FROM users")
+    cur.execute("SELECT username, profile_picture FROM users WHERE user_id NOT IN (?)",(id,))
     rows = cur.fetchall()
     return rows
 
@@ -216,6 +221,8 @@ def get_profile_picture(uid):
     rows = cur.fetchall()
     return rows
 
+# def is_following():
+#
 
 if __name__ == '__main__':
     app.run(debug=True)

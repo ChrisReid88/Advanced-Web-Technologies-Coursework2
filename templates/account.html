@@ -14,7 +14,7 @@
           <div class="post-box">
               <div class="col-lg-6 ">
                   <div class="well">
-                      <h4>{{ session['username'] }}'s profile {{ prof }} </h4>
+                      <h4>{{ session['username'] }}'s profile </h4>
                       <img src="static/imgs/{{ prof }}" alt="profile picture" id="account-prof" class="img-rounded">
                       <form action="/action_page.php">
                           First name:<br>
@@ -32,7 +32,7 @@
                               <img src="static/imgs/{{ prof }}" alt="" id="prof" class="img-circle">
                           </div>
                             <div class="col-lg-9" >
-                                <form action="/" method="POST">
+                                <form action="/profile" method="POST">
                                     <div class="col-lg-10">
                                     <textarea class="form-control" id="user-post" rows="3" name="comment" placeholder="Say something.."></textarea>
                                     </div>
