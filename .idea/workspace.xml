@@ -7,7 +7,6 @@
     <list default="true" id="8fa741d5-c55d-47ea-9f57-ad3a491a0fc7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/db.db" afterPath="$PROJECT_DIR$/static/db.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cw2.py" afterPath="$PROJECT_DIR$/cw2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/account.html" afterPath="$PROJECT_DIR$/templates/account.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/wall.html" afterPath="$PROJECT_DIR$/templates/wall.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +18,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cw2$cw2.coverage" NAME="cw2 Coverage Results" MODIFIED="1510929439525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/reid_chris_set09103_coursework2$cw2.coverage" NAME="cw2 Coverage Results" MODIFIED="1511125972630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/reid_chris_set09103_coursework2$cw2.coverage" NAME="cw2 Coverage Results" MODIFIED="1511132297713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -37,44 +36,47 @@
       <file leaf-file-name="cw2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cw2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="143" column="55" lean-forward="true" selection-start-line="143" selection-start-column="55" selection-end-line="143" selection-end-column="55" />
+            <state relative-caret-position="-266">
+              <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
               <folding>
                 <element signature="e#0#80#0" expanded="true" />
-                <marker date="1511126931771" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
-                <marker date="1511126931771" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
-                <marker date="1511126931771" expanded="true" signature="4594:4632" ph="INSERT INTO comments... " />
-                <marker date="1511126931771" expanded="true" signature="4594:4645" ph="INSERT INTO comments... " />
-                <marker date="1511126931771" expanded="true" signature="4594:4666" ph="INSERT INTO comments... " />
-                <marker date="1511126931771" expanded="true" signature="4773:4799" ph="SELECT * FRO... USERS" />
-                <marker date="1511126931771" expanded="true" signature="4773:4817" ph="SELECT user_... USERS" />
-                <marker date="1511126931771" expanded="true" signature="4908:4965" ph="INSERT INTO followers... " />
-                <marker date="1511126931771" expanded="true" signature="5095:5126" ph="SELECT * FRO... U" />
-                <marker date="1511126931771" expanded="true" signature="5095:5196" ph="SELECT * FRO... comments" />
-                <marker date="1511126931771" expanded="true" signature="5095:5197" ph="SELECT * FRO... comments" />
-                <marker date="1511126931771" expanded="true" signature="5095:5199" ph="SELECT * FRO... comments" />
-                <marker date="1511126931771" expanded="true" signature="5350:5375" ph="SELECT id_fo... Ff" />
-                <marker date="1511126931771" expanded="true" signature="5350:5402" ph="SELECT id_fo... followers" />
-                <marker date="1511126931771" expanded="true" signature="5563:5731" ph="SELECT * FRO... users" />
-                <marker date="1511126931771" expanded="true" signature="5563:5734" ph="SELECT * FRO... users" />
-                <marker date="1511126931771" expanded="true" signature="5563:5735" ph="SELECT * FRO... users" />
-                <marker date="1511126931771" expanded="true" signature="5563:5750" ph="SELECT * FRO... users" />
-                <marker date="1511126931771" expanded="true" signature="5961:6030" ph="INSERT INTO users... " />
-                <marker date="1511126931771" expanded="true" signature="6187:6230" ph="SELECT * FRO... users" />
-                <marker date="1511126931771" expanded="true" signature="6187:6255" ph="SELECT usern... users" />
-                <marker date="1511126931771" expanded="true" signature="6395:6443" ph="SELECT profi... users" />
-                <marker date="1511126931771" expanded="true" signature="6395:6446" ph="SELECT profi... users" />
-                <marker date="1511126931771" expanded="true" signature="6395:6456" ph="SELECT profi... users" />
+                <marker date="1511132029959" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="4858:4896" ph="INSERT INTO comments... " />
+                <marker date="1511132029959" expanded="true" signature="4858:4909" ph="INSERT INTO comments... " />
+                <marker date="1511132029959" expanded="true" signature="4858:4930" ph="INSERT INTO comments... " />
+                <marker date="1511132029959" expanded="true" signature="5037:5063" ph="SELECT * FRO... USERS" />
+                <marker date="1511132029959" expanded="true" signature="5037:5081" ph="SELECT user_... USERS" />
+                <marker date="1511132029959" expanded="true" signature="5172:5229" ph="INSERT INTO followers... " />
+                <marker date="1511132029959" expanded="true" signature="5359:5390" ph="SELECT * FRO... U" />
+                <marker date="1511132029959" expanded="true" signature="5359:5460" ph="SELECT * FRO... comments" />
+                <marker date="1511132029959" expanded="true" signature="5359:5461" ph="SELECT * FRO... comments" />
+                <marker date="1511132029959" expanded="true" signature="5359:5463" ph="SELECT * FRO... comments" />
+                <marker date="1511132029959" expanded="true" signature="5614:5639" ph="SELECT id_fo... Ff" />
+                <marker date="1511132029959" expanded="true" signature="5614:5666" ph="SELECT id_fo... followers" />
+                <marker date="1511132029959" expanded="true" signature="5827:5869" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="5827:5871" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="5827:5995" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="5827:5998" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="5827:5999" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="5827:6014" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="6225:6294" ph="INSERT INTO users... " />
+                <marker date="1511132029959" expanded="true" signature="6451:6503" ph="SELECT * FRO... users" />
+                <marker date="1511132029959" expanded="true" signature="6451:6528" ph="SELECT usern... users" />
+                <marker date="1511132029959" expanded="true" signature="6668:6716" ph="SELECT profi... users" />
+                <marker date="1511132029959" expanded="true" signature="6668:6719" ph="SELECT profi... users" />
+                <marker date="1511132029959" expanded="true" signature="6668:6729" ph="SELECT profi... users" />
+                <marker date="1511132029959" expanded="true" signature="6853:6906" ph="SELECT usern... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wall.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wall.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/wall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="81" column="65" lean-forward="false" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
+            <state relative-caret-position="312">
+              <caret line="86" column="46" lean-forward="true" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -83,7 +85,7 @@
       <file leaf-file-name="schema.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/schema.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="306">
               <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding />
             </state>
@@ -113,17 +115,17 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
+            <state relative-caret-position="592">
               <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="account.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/account.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="-439">
               <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding />
             </state>
@@ -144,11 +146,11 @@
     <findStrings>
       <find>salt</find>
       <find>login</find>
-      <find>print</find>
       <find>make</find>
       <find>insert</find>
-      <find>wall</find>
       <find>get_users</find>
+      <find>wall</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>valid_pwhash</replace>
@@ -168,9 +170,9 @@
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/static/schema.sql" />
         <option value="$PROJECT_DIR$/templates/logged-menu.html" />
-        <option value="$PROJECT_DIR$/templates/wall.html" />
-        <option value="$PROJECT_DIR$/cw2.py" />
         <option value="$PROJECT_DIR$/templates/account.html" />
+        <option value="$PROJECT_DIR$/cw2.py" />
+        <option value="$PROJECT_DIR$/templates/wall.html" />
       </list>
     </option>
   </component>
@@ -307,15 +309,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10902778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5083333" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3342071" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32896462" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3342071" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3761468" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -349,30 +350,33 @@
           <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
           <folding>
             <element signature="e#0#80#0" expanded="true" />
-            <marker date="1511126931771" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="4594:4632" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4645" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4666" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4773:4799" ph="SELECT * FRO... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4773:4817" ph="SELECT user_... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4908:4965" ph="INSERT INTO followers... " />
-            <marker date="1511126931771" expanded="true" signature="5095:5126" ph="SELECT * FRO... U" />
-            <marker date="1511126931771" expanded="true" signature="5095:5196" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5197" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5199" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5350:5375" ph="SELECT id_fo... Ff" />
-            <marker date="1511126931771" expanded="true" signature="5350:5402" ph="SELECT id_fo... followers" />
-            <marker date="1511126931771" expanded="true" signature="5563:5731" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5734" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5735" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5750" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5961:6030" ph="INSERT INTO users... " />
-            <marker date="1511126931771" expanded="true" signature="6187:6230" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="6187:6255" ph="SELECT usern... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6443" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6446" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6456" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="4858:4896" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4909" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4930" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="5037:5063" ph="SELECT * FRO... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5037:5081" ph="SELECT user_... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5172:5229" ph="INSERT INTO followers... " />
+            <marker date="1511132029959" expanded="true" signature="5359:5390" ph="SELECT * FRO... U" />
+            <marker date="1511132029959" expanded="true" signature="5359:5460" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5461" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5463" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5614:5639" ph="SELECT id_fo... Ff" />
+            <marker date="1511132029959" expanded="true" signature="5614:5666" ph="SELECT id_fo... followers" />
+            <marker date="1511132029959" expanded="true" signature="5827:5869" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5871" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5995" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5998" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5999" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:6014" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6225:6294" ph="INSERT INTO users... " />
+            <marker date="1511132029959" expanded="true" signature="6451:6503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6451:6528" ph="SELECT usern... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6716" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6719" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6729" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6853:6906" ph="SELECT usern... users" />
           </folding>
         </state>
       </provider>
@@ -399,30 +403,33 @@
           <caret line="140" column="16" lean-forward="false" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
           <folding>
             <element signature="e#0#80#0" expanded="true" />
-            <marker date="1511126931771" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="4594:4632" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4645" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4666" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4773:4799" ph="SELECT * FRO... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4773:4817" ph="SELECT user_... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4908:4965" ph="INSERT INTO followers... " />
-            <marker date="1511126931771" expanded="true" signature="5095:5126" ph="SELECT * FRO... U" />
-            <marker date="1511126931771" expanded="true" signature="5095:5196" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5197" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5199" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5350:5375" ph="SELECT id_fo... Ff" />
-            <marker date="1511126931771" expanded="true" signature="5350:5402" ph="SELECT id_fo... followers" />
-            <marker date="1511126931771" expanded="true" signature="5563:5731" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5734" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5735" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5750" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5961:6030" ph="INSERT INTO users... " />
-            <marker date="1511126931771" expanded="true" signature="6187:6230" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="6187:6255" ph="SELECT usern... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6443" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6446" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6456" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="4858:4896" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4909" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4930" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="5037:5063" ph="SELECT * FRO... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5037:5081" ph="SELECT user_... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5172:5229" ph="INSERT INTO followers... " />
+            <marker date="1511132029959" expanded="true" signature="5359:5390" ph="SELECT * FRO... U" />
+            <marker date="1511132029959" expanded="true" signature="5359:5460" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5461" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5463" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5614:5639" ph="SELECT id_fo... Ff" />
+            <marker date="1511132029959" expanded="true" signature="5614:5666" ph="SELECT id_fo... followers" />
+            <marker date="1511132029959" expanded="true" signature="5827:5869" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5871" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5995" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5998" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5999" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:6014" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6225:6294" ph="INSERT INTO users... " />
+            <marker date="1511132029959" expanded="true" signature="6451:6503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6451:6528" ph="SELECT usern... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6716" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6719" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6729" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6853:6906" ph="SELECT usern... users" />
           </folding>
         </state>
       </provider>
@@ -457,30 +464,33 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#80#0" expanded="true" />
-            <marker date="1511126931771" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="4594:4632" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4645" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4666" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4773:4799" ph="SELECT * FRO... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4773:4817" ph="SELECT user_... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4908:4965" ph="INSERT INTO followers... " />
-            <marker date="1511126931771" expanded="true" signature="5095:5126" ph="SELECT * FRO... U" />
-            <marker date="1511126931771" expanded="true" signature="5095:5196" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5197" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5199" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5350:5375" ph="SELECT id_fo... Ff" />
-            <marker date="1511126931771" expanded="true" signature="5350:5402" ph="SELECT id_fo... followers" />
-            <marker date="1511126931771" expanded="true" signature="5563:5731" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5734" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5735" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5750" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5961:6030" ph="INSERT INTO users... " />
-            <marker date="1511126931771" expanded="true" signature="6187:6230" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="6187:6255" ph="SELECT usern... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6443" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6446" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6456" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="4858:4896" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4909" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4930" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="5037:5063" ph="SELECT * FRO... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5037:5081" ph="SELECT user_... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5172:5229" ph="INSERT INTO followers... " />
+            <marker date="1511132029959" expanded="true" signature="5359:5390" ph="SELECT * FRO... U" />
+            <marker date="1511132029959" expanded="true" signature="5359:5460" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5461" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5463" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5614:5639" ph="SELECT id_fo... Ff" />
+            <marker date="1511132029959" expanded="true" signature="5614:5666" ph="SELECT id_fo... followers" />
+            <marker date="1511132029959" expanded="true" signature="5827:5869" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5871" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5995" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5998" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5999" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:6014" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6225:6294" ph="INSERT INTO users... " />
+            <marker date="1511132029959" expanded="true" signature="6451:6503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6451:6528" ph="SELECT usern... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6716" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6719" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6729" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6853:6906" ph="SELECT usern... users" />
           </folding>
         </state>
       </provider>
@@ -562,14 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -594,14 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/logged-menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -610,52 +604,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/wall.html">
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="81" column="65" lean-forward="false" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
+        <state relative-caret-position="592">
+          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-439">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cw2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="143" column="55" lean-forward="true" selection-start-line="143" selection-start-column="55" selection-end-line="143" selection-end-column="55" />
+        <state relative-caret-position="-266">
+          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
           <folding>
             <element signature="e#0#80#0" expanded="true" />
-            <marker date="1511126931771" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="4594:4632" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4645" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4594:4666" ph="INSERT INTO comments... " />
-            <marker date="1511126931771" expanded="true" signature="4773:4799" ph="SELECT * FRO... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4773:4817" ph="SELECT user_... USERS" />
-            <marker date="1511126931771" expanded="true" signature="4908:4965" ph="INSERT INTO followers... " />
-            <marker date="1511126931771" expanded="true" signature="5095:5126" ph="SELECT * FRO... U" />
-            <marker date="1511126931771" expanded="true" signature="5095:5196" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5197" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5095:5199" ph="SELECT * FRO... comments" />
-            <marker date="1511126931771" expanded="true" signature="5350:5375" ph="SELECT id_fo... Ff" />
-            <marker date="1511126931771" expanded="true" signature="5350:5402" ph="SELECT id_fo... followers" />
-            <marker date="1511126931771" expanded="true" signature="5563:5731" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5734" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5735" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5563:5750" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="5961:6030" ph="INSERT INTO users... " />
-            <marker date="1511126931771" expanded="true" signature="6187:6230" ph="SELECT * FRO... users" />
-            <marker date="1511126931771" expanded="true" signature="6187:6255" ph="SELECT usern... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6443" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6446" ph="SELECT profi... users" />
-            <marker date="1511126931771" expanded="true" signature="6395:6456" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="1786:1805" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="2465:2503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="4858:4896" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4909" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="4858:4930" ph="INSERT INTO comments... " />
+            <marker date="1511132029959" expanded="true" signature="5037:5063" ph="SELECT * FRO... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5037:5081" ph="SELECT user_... USERS" />
+            <marker date="1511132029959" expanded="true" signature="5172:5229" ph="INSERT INTO followers... " />
+            <marker date="1511132029959" expanded="true" signature="5359:5390" ph="SELECT * FRO... U" />
+            <marker date="1511132029959" expanded="true" signature="5359:5460" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5461" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5359:5463" ph="SELECT * FRO... comments" />
+            <marker date="1511132029959" expanded="true" signature="5614:5639" ph="SELECT id_fo... Ff" />
+            <marker date="1511132029959" expanded="true" signature="5614:5666" ph="SELECT id_fo... followers" />
+            <marker date="1511132029959" expanded="true" signature="5827:5869" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5871" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5995" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5998" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:5999" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="5827:6014" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6225:6294" ph="INSERT INTO users... " />
+            <marker date="1511132029959" expanded="true" signature="6451:6503" ph="SELECT * FRO... users" />
+            <marker date="1511132029959" expanded="true" signature="6451:6528" ph="SELECT usern... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6716" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6719" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6668:6729" ph="SELECT profi... users" />
+            <marker date="1511132029959" expanded="true" signature="6853:6906" ph="SELECT usern... users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account.html">
+    <entry file="file://$PROJECT_DIR$/templates/wall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        <state relative-caret-position="312">
+          <caret line="86" column="46" lean-forward="true" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
           <folding />
         </state>
       </provider>

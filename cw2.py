@@ -99,12 +99,13 @@ def check_auth(username, password):
 @app.route('/', methods=['POST', 'GET'])
 @requires_login
 def wall():
-
     id = session['user_id']
     comments = None
     follower_comments = None
     avatar = None
+    followers = None
     users = get_users(id)
+
     if get_profile_picture(id):
         avatar = get_profile_picture(id)
     if get_following_comments(id):
@@ -112,6 +113,9 @@ def wall():
         print follower_comments
     if get_own_comments(id):
         comments = get_own_comments(id)
+    if get_followers(id):
+        followers = get_followers(id)
+        print followers
 
     if request.method == 'POST':
         if request.form['submit'] == 'make-comment':
@@ -121,8 +125,12 @@ def wall():
             if request.form['submit'] in user:
                 follow(id, request.form['submit'])
                 return redirect(url_for('wall'))
-
-    return render_template('wall.html', comments=comments, follower_comments=follower_comments, users=users, avatar=avatar)
+    return render_template('wall.html',
+                           comments=comments,
+                           follower_comments=follower_comments,
+                           users=users,
+                           avatar=avatar,
+                           followers=followers)
 
 
 @app.route('/logout')
@@ -209,7 +217,7 @@ def insert_new_user(username, password):
 def get_users(id):
     db = get_db()
     cur = db.cursor()
-    cur.execute("SELECT username, profile_picture FROM users WHERE user_id NOT IN (?)",(id,))
+    cur.execute("SELECT username, profile_picture, user_id FROM users WHERE user_id NOT IN (?)",(id,))
     rows = cur.fetchall()
     return rows
 
@@ -221,8 +229,14 @@ def get_profile_picture(uid):
     rows = cur.fetchall()
     return rows
 
-# def is_following():
-#
+def get_followers(id):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT id_following FROM followers WHERE id_user =(?)", (id,))
+    rows = cur.fetchall()
+    list = [r[0] for r in rows]
+    return list
+
 
 if __name__ == '__main__':
     app.run(debug=True)
