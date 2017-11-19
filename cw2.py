@@ -6,7 +6,7 @@ app = Flask(__name__)
 DB_ROOT = os.path.dirname(os.path.realpath(__file__))
 DATABASE = os.path.join(DB_ROOT, 'static', 'db.db')
 app.secret_key = os.urandom(24)
-salt =  bcrypt.gensalt()
+salt = bcrypt.gensalt()
 
 def get_db():
     db = getattr(g, 'db', None)
@@ -73,9 +73,7 @@ def register():
             if new_username == row[1]:
                 error = 'Sorry, that username has been taken. Please try another.'
             else:
-                with db:
-                    cur.execute("INSERT INTO users(username, password) VALUES (?,?)", (new_username, new_password))
-                    db.commit
+                insert_new_user(new_username, new_password)
                 return redirect(url_for('login'))
     return render_template('register.html', error=error)
 
@@ -98,15 +96,18 @@ def check_auth(username, password):
     return valid
 
 
-@app.route('/wall', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 @requires_login
 def wall():
 
+    id = session['user_id']
     comments = None
     follower_comments = None
+    avatar = None
     users = get_users()
-    id = session['user_id']
-    get_following_comments(id)
+    if get_profile_picture(id):
+        avatar = get_profile_picture(id)
+        print avatar
     if get_following_comments(id):
         follower_comments = get_following_comments(id)
     if get_own_comments(id):
@@ -120,13 +121,28 @@ def wall():
                 follow(id, request.form['submit'])
                 return redirect(url_for('wall'))
 
-    return render_template('wall.html', comments=comments, follower_comments=follower_comments, users=users)
+    return render_template('wall.html', comments=comments, follower_comments=follower_comments, users=users, avatar=avatar)
 
 
 @app.route('/logout')
 def logout():
     session['logged_in'] = False
     return redirect(url_for('login'))
+
+
+@app.route('/profile')
+def profile():
+
+    id = session['user_id']
+    comments = None
+    avatar = None
+
+    if get_profile_picture(id):
+        avatar = get_profile_picture(id)
+    if get_own_comments(session['user_id']):
+        comments = get_own_comments(session['user_id'])
+        print comments
+    return render_template('account.html', comments=comments, avatar=avatar)
 
 
 def make_post(user_id):
@@ -169,13 +185,20 @@ def get_following_comments(uid):
     list = [r[0] for r in rows]
     placeholder = '?'
     placeholders = ', '.join(placeholder for id in list)
-    print list
-    print placeholders
     query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) WHERE comments.user_id IN (%s)" % placeholders
     cur.execute(query, list)
     rw = cur.fetchall()
     return rw
     # return comment_list
+
+
+def insert_new_user(username, password):
+    db = get_db()
+    cur = db.cursor()
+    with db:
+        cur.execute("INSERT INTO users(username, password, profile_picture) VALUES (?,?,?)",
+                    (username, password, 'default.jpeg'))
+        db.commit
 
 
 def get_users():
@@ -184,6 +207,15 @@ def get_users():
     cur.execute("SELECT username FROM users")
     rows = cur.fetchall()
     return rows
+
+
+def get_profile_picture(uid):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT profile_picture FROM users WHERE user_id=(?)", (uid,))
+    rows = cur.fetchall()
+    return rows
+
 
 if __name__ == '__main__':
     app.run(debug=True)

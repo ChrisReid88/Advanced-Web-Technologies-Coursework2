@@ -35,6 +35,11 @@ body{
     max-height: 150px;
 }
 
+#account-prof{
+    max-width: 300px;
+    max-height: 300px;
+}
+
 #user-post{
     padding-top:10px;
 }

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <title>{{ session['username'] }}'s Account</title>
+
+</head>
+<body>
+    {% include 'logged-menu.html' %}
+    {% set prof = avatar[0][0] %}
+    <div class="container text-center">
+      <div class="row">
+          <div class="post-box">
+              <div class="col-lg-6 ">
+                  <div class="well">
+                      <h4>{{ session['username'] }}'s profile {{ prof }} </h4>
+                      <img src="static/imgs/{{ prof }}" alt="profile picture" id="account-prof" class="img-rounded">
+                      <form action="/action_page.php">
+                          First name:<br>
+                          <input type="text" name="firstname" value=""><br>
+                          Last name:<br>
+                          <input type="text" name="lastname" value="Mouse"><br><br>
+                          <input class="btn btn-default" type="submit" value="Edit">
+                      </form>
+                  </div>
+              </div>
+                  <div class="col-lg-6">
+                      <div class="col-lg-12 well">
+                          <div class="col-lg-3">
+                              <h3>{{ session['username'] }}</h3>
+                              <img src="static/imgs/{{ prof }}" alt="" id="prof" class="img-circle">
+                          </div>
+                            <div class="col-lg-9" >
+                                <form action="/" method="POST">
+                                    <div class="col-lg-10">
+                                    <textarea class="form-control" id="user-post" rows="3" name="comment" placeholder="Say something.."></textarea>
+                                    </div>
+                                    <div class="col-lg-2">
+                                    <button class="btn btn-default pull-right" name="submit" id="post-button" value="make-comment">Post</button>
+                                    </div>
+                                </form>
+                            </div>
+                      </div>
+                      <div class="col-lg-12 well">
+                        <h5>Your post history</h5>
+                      </div>
+                      {% if comments %}
+                          {% for row in comments | reverse %}
+                              <div class="col-lg-12 well cn">
+                                  <div class="col-lg-3" id="post-user-info">
+                                      <h6>{{ row[1] }}</h6>
+                                      <img src="static/imgs/{{ prof }}" alt="" id="prof" class="img-thumbnail">
+                                  </div>
+                                  <div class="col-lg-9 text-left">
+                                      {{ '"'+row[8]+'"' }}
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+              </div>
+      </div>
+
+    </div>
+
+</body>
+</html>

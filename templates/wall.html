@@ -8,24 +8,24 @@
 </head>
 <body>
     {% include 'logged-menu.html' %}
-
+        {% set prof = avatar[0][0] %}
     <div class="container text-center">
       <div class="row">
           <div class="post-box">
               <div class="col-lg-3 well">
                   <div class="well">
                       <h4>{{ session['username'] }}</h4>
-                      <img src="static/imgs/prof.jpg" alt="profile picture" id="big-prof" class="img-rounded">
+                      <img src="static/imgs/{{ prof }}" alt="profile picture" id="big-prof" class="img-rounded">
                   </div>
               </div>
               <div class="col-lg-6">
                   <div class="col-lg-12 well">
                       <div class="col-lg-3">
                           <h3>{{ session['username'] }}</h3>
-                          <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-circle">
+                          <img src="static/imgs/{{ prof }}" alt="" id="prof" class="img-circle">
                       </div>
                         <div class="col-lg-9" >
-                            <form action="/wall" method="POST">
+                            <form action="/" method="POST">
                                 <div class="col-lg-10">
                                 <textarea class="form-control" id="user-post" rows="3" name="comment" placeholder="Say something.."></textarea>
                                 </div>
@@ -40,10 +40,10 @@
                               <div class="col-lg-12 well cn">
                                   <div class="col-lg-3" id="post-user-info">
                                       <h6>{{ row[1] }}</h6>
-                                      <img src="static/imgs/prof.jpg" alt="" id="prof" class="img-thumbnail">
+                                      <img src="static/imgs/{{ prof }}" alt="" id="prof" class="img-thumbnail">
                                   </div>
                                   <div class="col-lg-9 text-left">
-                                      {{ '"'+row[5]+'"' }}
+                                      {{ '"'+row[8]+'"' }}
                                   </div>
                               </div>
                       {% endfor %}
@@ -73,7 +73,7 @@
 
               <div class="col-lg-12 panel ">
                  {% for people in users %}
-                     <form action="/wall" method="POST">
+                     <form action="/" method="POST">
                         <div class="well col-lg-12">
                             <div class="col-lg-12 text-center" >
                               <p>{{ people[0] }}</p>
