@@ -5,8 +5,9 @@ from functools import wraps
 app = Flask(__name__)
 DB_ROOT = os.path.dirname(os.path.realpath(__file__))
 DATABASE = os.path.join(DB_ROOT, 'static', 'db.db')
-app.secret_key = os.urandom(24)
+app.secret_key = '\xfaHPA\xf9\x9e\xcbF\xec\xc3\t1\xa4-\r56\x1bK9\x15\xb6\xc4('
 salt = bcrypt.gensalt()
+
 
 def get_db():
     db = getattr(g, 'db', None)
@@ -14,6 +15,7 @@ def get_db():
         db = sqlite3.connect(DATABASE)
         g.db = db
     return db
+
 
 @app.teardown_appcontext
 def close_db_connection(exception):
@@ -55,6 +57,7 @@ def login():
             session['username'] = username
             session['password'] = password
             session['logged_in'] = True
+
             return redirect(url_for('wall'))
     return render_template('login.html', error=error)
 
@@ -154,9 +157,19 @@ def profile():
         if request.form['submit'] == 'make-comment':
             make_post(id)
             return redirect(url_for('profile'))
+        elif request.form['submit'] == 'upload-picture':
+            basedir = os.path.abspath(os.path.dirname(__file__))
+            f = request.files['datafile']
+            f.save(os.path.join(basedir,'./static/imgs/%s' % f.filename))
+            upload_profile_picture(id, f.filename)
 
     return render_template('account.html', comments=comments, avatar=avatar)
 
+def upload_profile_picture(id, filename):
+    db = get_db()
+    cur = db.cursor()
+    with db:
+        cur.execute("UPDATE users SET profile_picture =(?) WHERE user_id = (?)", (filename, id))
 
 def make_post(user_id):
     comment = request.form['comment']

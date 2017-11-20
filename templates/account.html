@@ -14,15 +14,24 @@
           <div class="post-box">
               <div class="col-lg-6 ">
                   <div class="well">
-                      <h4>{{ session['username'] }}'s profile </h4>
-                      <img src="static/imgs/{{ prof }}" alt="profile picture" id="account-prof" class="img-rounded">
-                      <form action="/action_page.php">
-                          First name:<br>
-                          <input type="text" name="firstname" value=""><br>
-                          Last name:<br>
-                          <input type="text" name="lastname" value="Mouse"><br><br>
-                          <input class="btn btn-default" type="submit" value="Edit">
-                      </form>
+                      <div class="well">
+                          <form action="" method="POST" enctype="multipart/form-data">
+                          <h4>{{ session['username'] }}'s profile </h4>
+                          <img src="static/imgs/{{ prof }}" alt="profile picture" id="account-prof" class="img-rounded">
+                              <input type="file" name="datafile">
+                              <button class="btn btn-default pull-right" name="submit" id="post-button" value="upload-picture">Post</button>
+                          </form>
+                      </div>
+                      <div class="well">
+                          <form action="/action_page.php">
+                              <h4 class="text-center"> Edit Profile</h4>
+                              First name:<br>
+                              <input type="text" name="firstname" value=""><br>
+                              Last name:<br>
+                              <input type="text" name="lastname" value=""><br><br>
+                              <input class="btn btn-default" type="submit" value="Edit">
+                          </form>
+                      </div>
                   </div>
               </div>
                   <div class="col-lg-6">
@@ -42,8 +51,8 @@
                                 </form>
                             </div>
                       </div>
-                      <div class="col-lg-12 well">
-                        <h5>Your post history</h5>
+                      <div class="col-lg-12 well post-history">
+                        <h4>Your post history</h4>
                       </div>
                       {% if comments %}
                           {% for row in comments | reverse %}
