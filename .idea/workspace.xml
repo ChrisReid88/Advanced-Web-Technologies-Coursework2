@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa741d5-c55d-47ea-9f57-ad3a491a0fc7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/static/db.db" afterPath="$PROJECT_DIR$/sourcecode/static/db.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cw2.iml" afterPath="$PROJECT_DIR$/.idea/cw2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/cw2.py" afterPath="$PROJECT_DIR$/sourcecode/cw2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/static/schema.sql" afterPath="$PROJECT_DIR$/sourcecode/static/schema.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/templates/wall.html" afterPath="$PROJECT_DIR$/sourcecode/templates/wall.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/templates/menu.html" afterPath="$PROJECT_DIR$/sourcecode/templates/menu.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,7 +30,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cw2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cw2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sourcecode/cw2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
@@ -59,6 +54,26 @@
                 <marker date="1511392754683" expanded="true" signature="10620:10671" ph="SELECT profi... users" />
                 <marker date="1511392754683" expanded="true" signature="10840:10893" ph="SELECT id_fo... followers" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sourcecode/templates/menu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logged-menu.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sourcecode/templates/logged-menu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,6 +136,7 @@
         <option value="$PROJECT_DIR$/sourcecode/static/schema.sql" />
         <option value="$PROJECT_DIR$/sourcecode/templates/wall.html" />
         <option value="$PROJECT_DIR$/sourcecode/cw2.py" />
+        <option value="$PROJECT_DIR$/sourcecode/templates/menu.html" />
       </list>
     </option>
   </component>
@@ -472,23 +488,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sourcecode/templates/logged-menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sourcecode/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sourcecode/templates/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -543,6 +543,22 @@
             <marker date="1511392754683" expanded="true" signature="10620:10671" ph="SELECT profi... users" />
             <marker date="1511392754683" expanded="true" signature="10840:10893" ph="SELECT id_fo... followers" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecode/templates/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecode/templates/logged-menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
