@@ -3,12 +3,17 @@ import sqlite3, os, time, bcrypt
 from functools import wraps
 
 app = Flask(__name__)
+
+# Getting the absolute file path and setting the database to the file db.db
 DB_ROOT = os.path.dirname(os.path.realpath(__file__))
 DATABASE = os.path.join(DB_ROOT, 'static', 'db.db')
+
+# Temporarily stored secret key.Needs moved!
 app.secret_key = '\xfaHPA\xf9\x9e\xcbF\xec\xc3\t1\xa4-\r56\x1bK9\x15\xb6\xc4('
 salt = bcrypt.gensalt()
 
 
+# Function for getting access to the database
 def get_db():
     db = getattr(g, 'db', None)
     if db is None:
@@ -17,6 +22,8 @@ def get_db():
     return db
 
 
+# Decorated function used to automatically close the db connection
+# whenever needed
 @app.teardown_appcontext
 def close_db_connection(exception):
     db = getattr(g, 'db', None)
@@ -24,6 +31,7 @@ def close_db_connection(exception):
         db.close()
 
 
+# Loads the schema (from console import and call function to reset database)
 def init_db():
     with app.app_context():
         db = get_db()
@@ -32,6 +40,8 @@ def init_db():
         db.commit
 
 
+# Decorator function that can be applied to any route that requires user to be
+# logged in
 def requires_login(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -42,6 +52,8 @@ def requires_login(f):
     return decorated
 
 
+# Login route. Checks if password and username match any in the database. If valid
+# set the session username and password and login to True.
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -62,6 +74,8 @@ def login():
     return render_template('login.html', error=error)
 
 
+# Register route. Checks that the username does not exist in the database
+# Encrypts the password. Inserts username and password into db and loads the login page.
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
@@ -84,6 +98,8 @@ def register():
     return render_template('register.html', error=error)
 
 
+# Compares username with usernames in database, and hashed passwords with hashed passwords
+# in the database.
 def check_auth(username, password):
     db = get_db()
     valid = False
@@ -102,6 +118,8 @@ def check_auth(username, password):
     return valid
 
 
+# Home/Wall page. Requires login. Calls query functions and stores to lists.
+# Carries out actions for each button click. (follow a user and make a post)
 @app.route('/', methods=['POST', 'GET'])
 @requires_login
 def wall():
@@ -113,6 +131,7 @@ def wall():
     users = get_users(id)
     own_details = get_own_details(id)
 
+    print users
     if get_profile_picture(id):
         avatar = get_profile_picture(id)
     if get_following_comments(id):
@@ -139,19 +158,20 @@ def wall():
                            own_details=own_details)
 
 
+# Log out
 @app.route('/logout')
 def logout():
     session['logged_in'] = False
     return redirect(url_for('login'))
 
 
-@app.route('/profile', methods=['GET','POST'])
+# Profile page of logged in user.
+@app.route('/profile', methods=['GET', 'POST'])
 def profile():
 
     id = session['user_id']
     comments = None
     avatar = None
-
     user = get_own_details(id)
 
     if get_profile_picture(id):
@@ -159,34 +179,33 @@ def profile():
     if get_own_comments(session['user_id']):
         comments = get_own_comments(session['user_id'])
         print comments
+
+
     if request.method == 'POST':
+        # make a post if the button value is make-comment
         if request.form['submit'] == 'make-comment':
             make_post(id)
             return redirect(url_for('profile'))
+        # upload a picture taking from the input file
         elif request.form['submit'] == 'upload-picture':
             basedir = os.path.abspath(os.path.dirname(__file__))
             f = request.files['datafile']
             f.save(os.path.join(basedir, './static/imgs/%s' % f.filename))
             upload_profile_picture(id, f.filename)
             return redirect(url_for('profile'))
+        # Edit user details. If none there set to None.
         elif request.form['submit'] == 'edit':
             first_name = request.form.get('first-name', None)
             last_name = request.form.get('last-name', None)
             bio = request.form.get('bio', None)
-            if first_name is None:
-                first_name = " "
-            if last_name is None:
-                last_name = " "
-            if bio is None:
-                bio = " "
-            update_info(first_name,last_name,bio, id)
+            update_info(first_name, last_name, bio, id)
             return redirect(url_for('profile'))
         # elif request.form['submit'] == 'delete':
         #     comment = request.form.get('comment-id')
-
     return render_template('account.html', comments=comments, avatar=avatar, user=user)
 
 
+# Delete a users comments. Not yet working. Need to find a way to retrieve the comment_id.
 def delete_comment(user_id, comment_id):
     db = get_db()
     cur = db.cursor()
@@ -195,6 +214,7 @@ def delete_comment(user_id, comment_id):
         db.commit()
 
 
+# Updates a users profile details
 def update_info(first, last, bio, id):
     db = get_db()
     cur = db.cursor()
@@ -203,6 +223,7 @@ def update_info(first, last, bio, id):
         db.commit()
 
 
+# Update the database with the profile picture name
 def upload_profile_picture(id, filename):
     db = get_db()
     cur = db.cursor()
@@ -211,6 +232,7 @@ def upload_profile_picture(id, filename):
         db.commit()
 
 
+# Insert the users post into the database
 def make_post(user_id):
     comment = request.form['comment']
     if comment:
@@ -221,6 +243,8 @@ def make_post(user_id):
             db.commit()
 
 
+# Retrieve the follewed users details, given their username (need to retrieve the user_id to insert
+# into the following table). Then insert user id and following id into the table.
 def follow(uid, fun):
     db = get_db()
     cur = db.cursor()
@@ -233,6 +257,7 @@ def follow(uid, fun):
         db.commit()
 
 
+# Retrieve all logged in users comments.
 def get_own_comments(uid):
     db = get_db()
     cur = db.cursor()
@@ -243,6 +268,8 @@ def get_own_comments(uid):
     return rows
 
 
+# Retrieve list of all the follwers. Retrieve all the comments for the users in that list and return it.
+# placeholders used to update the query depending on how many users are in the list.
 def get_following_comments(uid):
     db = get_db()
     cur = db.cursor()
@@ -256,9 +283,9 @@ def get_following_comments(uid):
     cur.execute(query, clist)
     rw = cur.fetchall()
     return rw
-    # return comment_list
 
 
+# For registration. Inserts the username, password and link to the default profile picture.
 def insert_new_user(username, password):
     db = get_db()
     cur = db.cursor()
@@ -268,6 +295,7 @@ def insert_new_user(username, password):
         db.commit
 
 
+# Get all other users to display people may know.
 def get_users(id):
     db = get_db()
     cur = db.cursor()
@@ -276,6 +304,7 @@ def get_users(id):
     return rows
 
 
+# Retreive all own details
 def get_own_details(id):
     db = get_db()
     cur = db.cursor()
@@ -286,6 +315,7 @@ def get_own_details(id):
     return rows
 
 
+# Return profile picture
 def get_profile_picture(uid):
     db = get_db()
     cur = db.cursor()
@@ -294,6 +324,7 @@ def get_profile_picture(uid):
     return rows
 
 
+# Get a list of all the followers
 def get_followers(id):
     db = get_db()
     cur = db.cursor()

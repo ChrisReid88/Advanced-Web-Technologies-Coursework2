@@ -16,6 +16,7 @@
                   <div class="well">
                       <h4>{{ session['username'] }}</h4>
                       <img src="static/imgs/{{ prof }}" alt="profile picture" id="big-prof" class="img-rounded">
+                      <!-- If there is no name or bio display links to the profile editing page -->
                       <h5 ><strong>Name</strong>:
                           {% if own_details[0][3]!=None and own_details[0][4]!=None %}
                                 {{ own_details[0][3] }} {{ own_details[0][4] }}</h5>
@@ -47,6 +48,7 @@
                             </form>
                         </div>
                   </div>
+                <!-- Display each comment in reverse  -->
                    {% if follower_comments %}
                       {% for row in follower_comments | reverse %}
                               <div class="col-lg-12 well cn">
@@ -63,32 +65,32 @@
                       {% endfor %}
                   {% endif %}
               </div>
-
           </div>
           <div class="col-lg-3 panel panel-heading" id="panel-heading">
-
               <div class="col-lg-12">
                   <h5>People you may know</h5>
               </div>
-
               <div class="col-lg-12 panel ">
-                 {% for people in users %}
-                     {% if followers %}
-                         {% if people[2] not in followers %}
-                             <form action="/" method="POST">
-                                <div class="well col-lg-12">
-                                    <div class="col-lg-12 text-center" >
-                                      <p>{{ people[0] }}</p>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <img src="static/imgs/{{ people[1] }}" alt="" id="prof" class="img-circle">
-                                    </div>
-                                    <div class="col-lg-12" id="follow-button">
+
+                     {% for people in users %}
+                         {% if followers %}
+                         <!-- If user id is not in followers list, display them -->
+                             {% if people[2] not in followers %}
+                                 <form action="/" method="POST">
+                                    <div class="well col-lg-12">
+                                        <div class="col-lg-12 text-center" >
+                                          <p>{{ people[0] }}</p>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <img src="static/imgs/{{ people[1] }}" alt="" id="prof" class="img-circle">
+                                        </div>
+                                        <div class="col-lg-12" id="follow-button">
                                         <button class="btn btn-default" name="submit" value="{{ people[0] }}" >Follow</button>
                                      </div>
                                 </div>
                              </form>
                              {% endif %}
+                         <!-- If no followers list display all users. -->
                          {% else %}
                             <form action="/" method="POST">
                                 <div class="well col-lg-12">

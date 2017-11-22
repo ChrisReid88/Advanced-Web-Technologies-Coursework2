@@ -15,7 +15,6 @@
           <div class="post-box">
               <div class="col-lg-6 ">
                   <div class="well">
-
                           <form action="" method="POST" enctype="multipart/form-data">
                           <h4>{{ session['username'] }}'s profile </h4>
                               <img src="static/imgs/{{ prof }}" alt="profile picture" id="account-prof" class="img-rounded">
@@ -66,6 +65,7 @@
                       <div class="col-lg-12 well post-history">
                         <h4>Your post history</h4>
                       </div>
+                      <!-- Display each comment in reverse  -->
                       {% if comments %}
                           {% for row in comments | reverse %}
                               <div class="col-lg-12 well cn" name="{{ row[7] }}">

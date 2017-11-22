@@ -26,12 +26,12 @@
                   <div class="input-group" id="input-form">
                      <input type="password" name="password" value="{{
                       request.form.password }}" pattern="[A-Za-z0-9].{8,20}"  required title="8 characters minimum">
-
                   </div>
                   <div class="form-group" id="login-button">
                     <input class="btn btn-default pull-middle" type="submit" value="Register">
                   </div>
               </form>
+
               {% if error %}
                 {{ error }}
               {% endif %}
