@@ -108,17 +108,16 @@ def wall():
     avatar = None
     followers = None
     users = get_users(id)
+    own_details = get_own_details(id)
 
     if get_profile_picture(id):
         avatar = get_profile_picture(id)
     if get_following_comments(id):
         follower_comments = get_following_comments(id)
-        print follower_comments
     if get_own_comments(id):
         comments = get_own_comments(id)
     if get_followers(id):
         followers = get_followers(id)
-        print followers
 
     if request.method == 'POST':
         if request.form['submit'] == 'make-comment':
@@ -133,7 +132,8 @@ def wall():
                            follower_comments=follower_comments,
                            users=users,
                            avatar=avatar,
-                           followers=followers)
+                           followers=followers,
+                           own_details=own_details)
 
 
 @app.route('/logout')
@@ -149,10 +149,13 @@ def profile():
     comments = None
     avatar = None
 
+    user = get_own_details(id)
+
     if get_profile_picture(id):
         avatar = get_profile_picture(id)
     if get_own_comments(session['user_id']):
         comments = get_own_comments(session['user_id'])
+
     if request.method == 'POST':
         if request.form['submit'] == 'make-comment':
             make_post(id)
@@ -160,16 +163,39 @@ def profile():
         elif request.form['submit'] == 'upload-picture':
             basedir = os.path.abspath(os.path.dirname(__file__))
             f = request.files['datafile']
-            f.save(os.path.join(basedir,'./static/imgs/%s' % f.filename))
+            f.save(os.path.join(basedir, './static/imgs/%s' % f.filename))
             upload_profile_picture(id, f.filename)
+            return redirect(url_for('profile'))
+        elif request.form['submit'] == 'edit':
+            first_name = request.form.get('first-name', None)
+            last_name = request.form.get('last-name', None)
+            bio = request.form.get('bio', None)
+            if first_name is None:
+                first_name = " "
+            if last_name is None:
+                last_name = " "
+            if bio is None:
+                bio = " "
+            print first_name, last_name, bio
+            update_info(first_name,last_name,bio, id)
+            return redirect(url_for('profile'))
 
-    return render_template('account.html', comments=comments, avatar=avatar)
+    return render_template('account.html', comments=comments, avatar=avatar, user=user)
+
+
+def update_info(first, last, bio, id):
+    db = get_db()
+    cur = db.cursor()
+    with db:
+        cur.execute("UPDATE users SET first_name=?,last_name=?,bio=? WHERE user_id =?", (first, last, bio, id))
+        db.commit()
 
 def upload_profile_picture(id, filename):
     db = get_db()
     cur = db.cursor()
     with db:
         cur.execute("UPDATE users SET profile_picture =(?) WHERE user_id = (?)", (filename, id))
+        db.commit()
 
 def make_post(user_id):
     comment = request.form['comment']
@@ -211,7 +237,8 @@ def get_following_comments(uid):
     list = [r[0] for r in rows]
     placeholder = '?'
     placeholders = ', '.join(placeholder for id in list)
-    query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) INNER JOIN followers ON (followers.id_following = users.user_id) WHERE comments.user_id IN (%s)" % placeholders
+    query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) INNER JOIN followers ON\
+        (followers.id_following = users.user_id) WHERE comments.user_id IN (%s)" % placeholders
     cur.execute(query, list)
     rw = cur.fetchall()
     return rw
@@ -234,6 +261,14 @@ def get_users(id):
     rows = cur.fetchall()
     return rows
 
+def get_own_details(id):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT username, profile_picture, user_id, first_name, last_name, bio \
+                    FROM users WHERE user_id=(?)",(id,))
+    rows = cur.fetchall()
+    print rows
+    return rows
 
 def get_profile_picture(uid):
     db = get_db()

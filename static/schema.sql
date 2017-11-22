@@ -17,6 +17,7 @@ CREATE TABLE `users` (
   `profile_picture` TEXT,
   `first_name` TEXT,
   `last_name` TEXT,
+  `bio` TEXT,
   PRIMARY KEY (`user_id`)
 );
 
