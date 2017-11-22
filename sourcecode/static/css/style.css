@@ -81,3 +81,12 @@ body{
 input[type=file] {
     margin: 0 auto;
 }
+
+.affix {
+      top: 20px;
+      z-index: 9999 !important;
+}
+
+#login-panel{
+    min-width:300px;
+}
