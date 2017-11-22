@@ -11,13 +11,23 @@
         {% set prof = avatar[0][0] %}
     <div class="container text-center">
       <div class="row">
-          <div class="post-box">
+          <div class="post-box" data-spy="affix" data-offset-top="197">
               <div class="col-lg-3 well">
                   <div class="well">
                       <h4>{{ session['username'] }}</h4>
                       <img src="static/imgs/{{ prof }}" alt="profile picture" id="big-prof" class="img-rounded">
-                      <h5><strong>Name</strong>: {{ own_details[0][3] }} {{ own_details[0][4] }}</h5>
-                      <p><strong>About:</strong> {{ own_details[0][5] }}</p>
+                      <h5 ><strong>Name</strong>:
+                          {% if own_details[0][3]!=None and own_details[0][4]!=None %}
+                                {{ own_details[0][3] }} {{ own_details[0][4] }}</h5>
+                          {% else %}
+                              <a id="profile-name" href="/profile">Update your info!</a>
+                          {% endif %}
+                      <p><strong>About:</strong>
+                          {% if own_details[0][5]!=None %}
+                              {{ own_details[0][5] }}</p>
+                          {% else %}
+                              <a href="/profile">Tell us a little about yourself!</a>
+                          {% endif %}
                   </div>
               </div>
               <div class="col-lg-6">
@@ -41,11 +51,13 @@
                       {% for row in follower_comments | reverse %}
                               <div class="col-lg-12 well cn">
                                   <div class="col-lg-3" id="post-user-info">
+                                      <a href="/">
                                       <h6>{{ row[1] }}</h6>
                                       <img src="static/imgs/{{ row[3] }}" alt="" id="prof" class="img-thumbnail">
+                                      </a>
                                   </div>
                                   <div class="col-lg-9 text-left">
-                                      {{ '"'+row[8]+'"' }}
+                                      {{ '"'+row[9]+'"' }}
                                   </div>
                               </div>
                       {% endfor %}
@@ -70,7 +82,6 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <img src="static/imgs/{{ people[1] }}" alt="" id="prof" class="img-circle">
-                                        <p>{{people}}</p>
                                     </div>
                                     <div class="col-lg-12" id="follow-button">
                                         <button class="btn btn-default" name="submit" value="{{ people[0] }}" >Follow</button>
@@ -82,11 +93,10 @@
                             <form action="/" method="POST">
                                 <div class="well col-lg-12">
                                     <div class="col-lg-12 text-center" >
-                                      <p>{{ people[0] }}</p>
+                                      <p><strong>{{ people[0] }}</strong></p>
                                     </div>
                                     <div class="col-lg-12">
                                         <img src="static/imgs/{{ people[1] }}" alt="" id="prof" class="img-circle">
-                                        <p>{{people}}</p>
                                     </div>
                                     <div class="col-lg-12" id="follow-button">
                                         <button class="btn btn-default" name="submit" value="{{ people[0] }}" >Follow</button>

@@ -14,11 +14,11 @@
 }
 
 .post-box{
-    background-color: #337ab7 !important; ;
+    background-color: #333333 !important; ;
 }
 
 body{
-    background-color: lightgray !important;
+    background-color: #333333 !important;
 }
 #login-button{
     text-align: center;
@@ -36,7 +36,7 @@ body{
 }
 
 #account-prof{
-    max-width: 300px;
+    max-width: 250px;
     max-height: 300px;
 }
 
@@ -66,8 +66,18 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+    word-wrap: break-word;
 }
 
 .post-history{
     border-bottom: solid thin grey;
+}
+
+#profile-name{
+    padding-bottom: 10px !important;
+    margin-bottom: 10px;
+}
+
+input[type=file] {
+    margin: 0 auto;
 }

@@ -19,7 +19,7 @@
                           <form action="" method="POST" enctype="multipart/form-data">
                           <h4>{{ session['username'] }}'s profile </h4>
                               <img src="static/imgs/{{ prof }}" alt="profile picture" id="account-prof" class="img-rounded">
-                              <input class="text-center" type="file" name="datafile">
+                              <input class="text-center" type="file" name="datafile" required>
                               <button class="btn btn-default pull-center" name="submit" id="post-button" value="upload-picture">Update</button>
                           </form>
 
@@ -68,14 +68,20 @@
                       </div>
                       {% if comments %}
                           {% for row in comments | reverse %}
-                              <div class="col-lg-12 well cn">
+                              <div class="col-lg-12 well cn" name="{{ row[7] }}">
                                   <div class="col-lg-3" id="post-user-info">
                                       <h6>{{ row[1] }}</h6>
                                       <img src="static/imgs/{{ prof }}" alt="" id="prof" class="img-thumbnail">
                                   </div>
-                                  <div class="col-lg-9 text-left">
-                                      {{ '"'+row[8]+'"' }}
+                                  <div class="col-lg-6 text-left">
+                                      {{ '"'+row[9]+'"' }}
                                   </div>
+                                    <div class="col-lg-2 pull-right">
+                                        <form action="" method="POST">
+                                      <button class="btn btn-default pull-right" name="submit" id="delete-button" value="delete-comment">Delete</button>
+                                            </form>
+                                  </div>
+
                               </div>
                           {% endfor %}
                       {% endif %}

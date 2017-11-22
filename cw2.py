@@ -65,6 +65,7 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
+    username = []
     db = get_db()
     cur = db.cursor()
     cur.execute("SELECT * FROM users")
@@ -73,11 +74,13 @@ def register():
         new_username = request.form['username']
         new_password = bcrypt.hashpw(request.form['password'].encode('utf8'), salt)
         for row in rows:
-            if new_username == row[1]:
-                error = 'Sorry, that username has been taken. Please try another.'
-            else:
-                insert_new_user(new_username, new_password)
-                return redirect(url_for('login'))
+            username.append(row[1])
+        print username
+        if new_username in username:
+            error = 'Sorry, that username has been taken. Please try another.'
+        else:
+            insert_new_user(new_username, new_password)
+            return redirect(url_for('login'))
     return render_template('register.html', error=error)
 
 
@@ -155,7 +158,7 @@ def profile():
         avatar = get_profile_picture(id)
     if get_own_comments(session['user_id']):
         comments = get_own_comments(session['user_id'])
-
+        print comments
     if request.method == 'POST':
         if request.form['submit'] == 'make-comment':
             make_post(id)
@@ -176,11 +179,20 @@ def profile():
                 last_name = " "
             if bio is None:
                 bio = " "
-            print first_name, last_name, bio
             update_info(first_name,last_name,bio, id)
             return redirect(url_for('profile'))
+        # elif request.form['submit'] == 'delete':
+        #     comment = request.form.get('comment-id')
 
     return render_template('account.html', comments=comments, avatar=avatar, user=user)
+
+
+def delete_comment(user_id, comment_id):
+    db = get_db()
+    cur = db.cursor()
+    with db:
+        cur.execute("DELETE FROM comments WHERE user_id=(?) AND comment_id=(?)",(user_id, comment_id))
+        db.commit()
 
 
 def update_info(first, last, bio, id):
@@ -190,12 +202,14 @@ def update_info(first, last, bio, id):
         cur.execute("UPDATE users SET first_name=?,last_name=?,bio=? WHERE user_id =?", (first, last, bio, id))
         db.commit()
 
+
 def upload_profile_picture(id, filename):
     db = get_db()
     cur = db.cursor()
     with db:
         cur.execute("UPDATE users SET profile_picture =(?) WHERE user_id = (?)", (filename, id))
         db.commit()
+
 
 def make_post(user_id):
     comment = request.form['comment']
@@ -234,12 +248,12 @@ def get_following_comments(uid):
     cur = db.cursor()
     cur.execute("SELECT id_following FROM followers WHERE id_user=(?)", (uid,))
     rows = cur.fetchall()
-    list = [r[0] for r in rows]
+    clist = [r[0] for r in rows]
     placeholder = '?'
-    placeholders = ', '.join(placeholder for id in list)
+    placeholders = ', '.join(placeholder for id in  clist)
     query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) INNER JOIN followers ON\
         (followers.id_following = users.user_id) WHERE comments.user_id IN (%s)" % placeholders
-    cur.execute(query, list)
+    cur.execute(query, clist)
     rw = cur.fetchall()
     return rw
     # return comment_list
@@ -261,6 +275,7 @@ def get_users(id):
     rows = cur.fetchall()
     return rows
 
+
 def get_own_details(id):
     db = get_db()
     cur = db.cursor()
@@ -270,12 +285,14 @@ def get_own_details(id):
     print rows
     return rows
 
+
 def get_profile_picture(uid):
     db = get_db()
     cur = db.cursor()
     cur.execute("SELECT profile_picture FROM users WHERE user_id=(?)", (uid,))
     rows = cur.fetchall()
     return rows
+
 
 def get_followers(id):
     db = get_db()
