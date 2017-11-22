@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa741d5-c55d-47ea-9f57-ad3a491a0fc7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/static/db.db" afterPath="$PROJECT_DIR$/sourcecode/static/db.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cw2.iml" afterPath="$PROJECT_DIR$/.idea/cw2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/cw2.py" afterPath="$PROJECT_DIR$/sourcecode/cw2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/static/schema.sql" afterPath="$PROJECT_DIR$/sourcecode/static/schema.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sourcecode/templates/wall.html" afterPath="$PROJECT_DIR$/sourcecode/templates/wall.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +18,9 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cw2$cw2.coverage" NAME="cw2 Coverage Results" MODIFIED="1510929439525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/reid_chris_set09103_coursework2$cw2.coverage" NAME="cw2 Coverage Results" MODIFIED="1511387437077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sourcecode" />
+    <SUITE FILE_PATH="coverage/reid_chris_set09103_coursework2$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1511388629578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sourcecode" />
+    <SUITE FILE_PATH="coverage/reid_chris_set09103_coursework2$cw2.coverage" NAME="cw2 Coverage Results" MODIFIED="1511388394809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sourcecode" />
+    <SUITE FILE_PATH="coverage/reid_chris_set09103_coursework2$cw2_py.coverage" NAME="cw2.py Coverage Results" MODIFIED="1511392762616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sourcecode" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -31,27 +38,37 @@
       <file leaf-file-name="cw2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sourcecode/cw2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="178" column="34" lean-forward="false" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
+            <state relative-caret-position="223">
+              <caret line="117" column="31" lean-forward="false" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
               <folding>
                 <element signature="e#0#80#0" expanded="true" />
-                <marker date="1511387908181" expanded="true" signature="2581:2600" ph="SELECT * FRO... users" />
-                <marker date="1511387908181" expanded="true" signature="6490:6528" ph="SELECT * FRO... users" />
-                <marker date="1511387908181" expanded="true" signature="7086:7143" ph="DELETE FROM " />
-                <marker date="1511387908181" expanded="true" signature="7337:7401" ph="UPDATE users... " />
-                <marker date="1511387908181" expanded="true" signature="7618:7675" ph="UPDATE users... " />
-                <marker date="1511387908181" expanded="true" signature="7930:7981" ph="INSERT INTO comments... " />
-                <marker date="1511387908181" expanded="true" signature="8291:8335" ph="SELECT user_... USERS" />
-                <marker date="1511387908181" expanded="true" signature="8426:8483" ph="INSERT INTO followers... " />
-                <marker date="1511387908181" expanded="true" signature="8654:8756" ph="SELECT * FRO... users" />
-                <marker date="1511387908181" expanded="true" signature="9099:9151" ph="SELECT id_fo... followers" />
-                <marker date="1511387908181" expanded="true" signature="9315:9495" ph="SELECT * FRO... users" />
-                <marker date="1511387908181" expanded="true" signature="9789:9858" ph="INSERT INTO users... " />
-                <marker date="1511387908181" expanded="true" signature="10065:10142" ph="SELECT usern... users" />
-                <marker date="1511387908181" expanded="true" signature="10304:10424" ph="SELECT usern... users" />
-                <marker date="1511387908181" expanded="true" signature="10604:10655" ph="SELECT profi... users" />
-                <marker date="1511387908181" expanded="true" signature="10824:10877" ph="SELECT id_fo... followers" />
+                <marker date="1511392754683" expanded="true" signature="2581:2600" ph="SELECT * FRO... users" />
+                <marker date="1511392754683" expanded="true" signature="6488:6526" ph="SELECT * FRO... users" />
+                <marker date="1511392754683" expanded="true" signature="7084:7141" ph="DELETE FROM " />
+                <marker date="1511392754683" expanded="true" signature="7335:7399" ph="UPDATE users... " />
+                <marker date="1511392754683" expanded="true" signature="7616:7673" ph="UPDATE users... " />
+                <marker date="1511392754683" expanded="true" signature="7928:7979" ph="INSERT INTO comments... " />
+                <marker date="1511392754683" expanded="true" signature="8289:8333" ph="SELECT user_... USERS" />
+                <marker date="1511392754683" expanded="true" signature="8424:8481" ph="INSERT INTO followers... " />
+                <marker date="1511392754683" expanded="true" signature="8652:8754" ph="SELECT * FRO... users" />
+                <marker date="1511392754683" expanded="true" signature="9097:9149" ph="SELECT id_fo... followers" />
+                <marker date="1511392754683" expanded="true" signature="9313:9526" ph="SELECT * FRO... users" />
+                <marker date="1511392754683" expanded="true" signature="9820:9889" ph="INSERT INTO users... " />
+                <marker date="1511392754683" expanded="true" signature="10096:10173" ph="SELECT usern... users" />
+                <marker date="1511392754683" expanded="true" signature="10335:10455" ph="SELECT usern... users" />
+                <marker date="1511392754683" expanded="true" signature="10620:10671" ph="SELECT profi... users" />
+                <marker date="1511392754683" expanded="true" signature="10840:10893" ph="SELECT id_fo... followers" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wall.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sourcecode/templates/wall.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,8 +90,8 @@
       <find>make</find>
       <find>insert</find>
       <find>wall</find>
-      <find>print</find>
       <find>get_users</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>valid_pwhash</replace>
@@ -99,9 +116,10 @@
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/sourcecode/init_db.py" />
-        <option value="$PROJECT_DIR$/sourcecode/templates/wall.html" />
         <option value="$PROJECT_DIR$/sourcecode/templates/register.html" />
         <option value="$PROJECT_DIR$/sourcecode/templates/account.html" />
+        <option value="$PROJECT_DIR$/sourcecode/static/schema.sql" />
+        <option value="$PROJECT_DIR$/sourcecode/templates/wall.html" />
         <option value="$PROJECT_DIR$/sourcecode/cw2.py" />
       </list>
     </option>
@@ -139,22 +157,15 @@
           <expand>
             <path>
               <item name="reid_chris_set09103_coursework2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reid_chris_set09103_coursework2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reid_chris_set09103_coursework2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reid_chris_set09103_coursework2" type="462c0819:PsiDirectoryNode" />
               <item name="sourcecode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reid_chris_set09103_coursework2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reid_chris_set09103_coursework2" type="462c0819:PsiDirectoryNode" />
               <item name="sourcecode" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reid_chris_set09103_coursework2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reid_chris_set09103_coursework2" type="462c0819:PsiDirectoryNode" />
               <item name="sourcecode" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -183,9 +194,9 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sourcecode/cw2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sourcecode" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -199,8 +210,44 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.cw2">
-    <configuration name="cw2" type="PythonConfigurationType" factoryName="Python" singleton="true">
+  <component name="RunManager" selected="Python.cw2.py">
+    <configuration default="true" type="Python.PyramidServer" factoryName="Pyramid server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sourcecode" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cw2" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="CONFIGURATION_FILE" value="C:\Users\Chris\Documents\GitHub\reid_chris_set09103_coursework2\sourcecode\cw2.py" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cw2" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="cw2.py" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -240,14 +287,14 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5083333" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3342071" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3342071" sideWeight="0.49583334" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34731323" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39842725" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -256,27 +303,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5083333" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3342071" sideWeight="0.49583334" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3761468" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10902778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39842725" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -470,14 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sourcecode/templates/wall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="50" column="55" lean-forward="false" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sourcecode/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -488,34 +506,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sourcecode/static/schema.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="401">
+          <caret line="33" column="276" lean-forward="false" selection-start-line="33" selection-start-column="276" selection-end-line="33" selection-end-column="276" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecode/templates/wall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sourcecode/cw2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="178" column="34" lean-forward="false" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
+        <state relative-caret-position="223">
+          <caret line="117" column="31" lean-forward="false" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
           <folding>
             <element signature="e#0#80#0" expanded="true" />
-            <marker date="1511387908181" expanded="true" signature="2581:2600" ph="SELECT * FRO... users" />
-            <marker date="1511387908181" expanded="true" signature="6490:6528" ph="SELECT * FRO... users" />
-            <marker date="1511387908181" expanded="true" signature="7086:7143" ph="DELETE FROM " />
-            <marker date="1511387908181" expanded="true" signature="7337:7401" ph="UPDATE users... " />
-            <marker date="1511387908181" expanded="true" signature="7618:7675" ph="UPDATE users... " />
-            <marker date="1511387908181" expanded="true" signature="7930:7981" ph="INSERT INTO comments... " />
-            <marker date="1511387908181" expanded="true" signature="8291:8335" ph="SELECT user_... USERS" />
-            <marker date="1511387908181" expanded="true" signature="8426:8483" ph="INSERT INTO followers... " />
-            <marker date="1511387908181" expanded="true" signature="8654:8756" ph="SELECT * FRO... users" />
-            <marker date="1511387908181" expanded="true" signature="9099:9151" ph="SELECT id_fo... followers" />
-            <marker date="1511387908181" expanded="true" signature="9315:9495" ph="SELECT * FRO... users" />
-            <marker date="1511387908181" expanded="true" signature="9789:9858" ph="INSERT INTO users... " />
-            <marker date="1511387908181" expanded="true" signature="10065:10142" ph="SELECT usern... users" />
-            <marker date="1511387908181" expanded="true" signature="10304:10424" ph="SELECT usern... users" />
-            <marker date="1511387908181" expanded="true" signature="10604:10655" ph="SELECT profi... users" />
-            <marker date="1511387908181" expanded="true" signature="10824:10877" ph="SELECT id_fo... followers" />
+            <marker date="1511392754683" expanded="true" signature="2581:2600" ph="SELECT * FRO... users" />
+            <marker date="1511392754683" expanded="true" signature="6488:6526" ph="SELECT * FRO... users" />
+            <marker date="1511392754683" expanded="true" signature="7084:7141" ph="DELETE FROM " />
+            <marker date="1511392754683" expanded="true" signature="7335:7399" ph="UPDATE users... " />
+            <marker date="1511392754683" expanded="true" signature="7616:7673" ph="UPDATE users... " />
+            <marker date="1511392754683" expanded="true" signature="7928:7979" ph="INSERT INTO comments... " />
+            <marker date="1511392754683" expanded="true" signature="8289:8333" ph="SELECT user_... USERS" />
+            <marker date="1511392754683" expanded="true" signature="8424:8481" ph="INSERT INTO followers... " />
+            <marker date="1511392754683" expanded="true" signature="8652:8754" ph="SELECT * FRO... users" />
+            <marker date="1511392754683" expanded="true" signature="9097:9149" ph="SELECT id_fo... followers" />
+            <marker date="1511392754683" expanded="true" signature="9313:9526" ph="SELECT * FRO... users" />
+            <marker date="1511392754683" expanded="true" signature="9820:9889" ph="INSERT INTO users... " />
+            <marker date="1511392754683" expanded="true" signature="10096:10173" ph="SELECT usern... users" />
+            <marker date="1511392754683" expanded="true" signature="10335:10455" ph="SELECT usern... users" />
+            <marker date="1511392754683" expanded="true" signature="10620:10671" ph="SELECT profi... users" />
+            <marker date="1511392754683" expanded="true" signature="10840:10893" ph="SELECT id_fo... followers" />
           </folding>
         </state>
       </provider>

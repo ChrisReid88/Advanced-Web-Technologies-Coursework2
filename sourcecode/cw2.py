@@ -89,7 +89,6 @@ def register():
         new_password = bcrypt.hashpw(request.form['password'].encode('utf8'), salt)
         for row in rows:
             username.append(row[1])
-        print username
         if new_username in username:
             error = 'Sorry, that username has been taken. Please try another.'
         else:
@@ -111,11 +110,12 @@ def wall():
     users = get_users(id)
     own_details = get_own_details(id)
 
-    print users
     if get_profile_picture(id):
         avatar = get_profile_picture(id)
     if get_following_comments(id):
-        follower_comments = get_following_comments(id)
+        fc = get_following_comments(id)
+        follower_comments = remove_dup(fc)
+        print follower_comments
     if get_own_comments(id):
         comments = get_own_comments(id)
     if get_followers(id):
@@ -158,7 +158,6 @@ def profile():
         avatar = get_profile_picture(id)
     if get_own_comments(session['user_id']):
         comments = get_own_comments(session['user_id'])
-        print comments
 
 
     if request.method == 'POST':
@@ -278,7 +277,7 @@ def get_following_comments(uid):
     clist = [r[0] for r in rows]
     placeholder = '?'
     placeholders = ', '.join(placeholder for id in  clist)
-    query = "SELECT * FROM users INNER JOIN comments on (users.user_id=comments.user_id) INNER JOIN followers ON\
+    query = "SELECT username, profile_picture, comment FROM users INNER JOIN comments on (users.user_id=comments.user_id) INNER JOIN followers ON\
         (followers.id_following = users.user_id) WHERE comments.user_id IN (%s)" % placeholders
     cur.execute(query, clist)
     rw = cur.fetchall()
@@ -311,7 +310,6 @@ def get_own_details(id):
     cur.execute("SELECT username, profile_picture, user_id, first_name, last_name, bio \
                     FROM users WHERE user_id=(?)",(id,))
     rows = cur.fetchall()
-    print rows
     return rows
 
 
@@ -333,6 +331,11 @@ def get_followers(id):
     list = [r[0] for r in rows]
     return list
 
+
+def remove_dup(seq):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in seq if not (x in seen or seen_add(x))]
 
 if __name__ == '__main__':
     app.run(debug=True)
