@@ -98,26 +98,6 @@ def register():
     return render_template('register.html', error=error)
 
 
-# Compares username with usernames in database, and hashed passwords with hashed passwords
-# in the database.
-def check_auth(username, password):
-    db = get_db()
-    valid = False
-    with db:
-        cur = db.cursor()
-        cur.execute("SELECT * FROM users WHERE username=(?)", (username,))
-        row = cur.fetchall()
-        if row:
-            session['user_id'] = row[0][0]
-            db_username = row[0][1]
-            db_password = row[0][2]
-            if db_username == username and db_password == bcrypt.hashpw(password.encode('utf8'), db_password.encode('utf8')):
-
-                valid = True
-
-    return valid
-
-
 # Home/Wall page. Requires login. Calls query functions and stores to lists.
 # Carries out actions for each button click. (follow a user and make a post)
 @app.route('/', methods=['POST', 'GET'])
@@ -203,6 +183,26 @@ def profile():
         # elif request.form['submit'] == 'delete':
         #     comment = request.form.get('comment-id')
     return render_template('account.html', comments=comments, avatar=avatar, user=user)
+
+
+# Compares username with usernames in database, and hashed passwords with hashed passwords
+# in the database.
+def check_auth(username, password):
+    db = get_db()
+    valid = False
+    with db:
+        cur = db.cursor()
+        cur.execute("SELECT * FROM users WHERE username=(?)", (username,))
+        row = cur.fetchall()
+        if row:
+            session['user_id'] = row[0][0]
+            db_username = row[0][1]
+            db_password = row[0][2]
+            if db_username == username and db_password == bcrypt.hashpw(password.encode('utf8'), db_password.encode('utf8')):
+
+                valid = True
+
+    return valid
 
 
 # Delete a users comments. Not yet working. Need to find a way to retrieve the comment_id.
